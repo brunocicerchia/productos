@@ -1,6 +1,7 @@
 import React from "react";
 import NavbarClass from "./Navbar";
 import Producto from "./Producto";
+import ItemCount from "./itemCount";
 import '../App.css';
 import { useState, useEffect } from "react";
 
@@ -190,18 +191,17 @@ class App extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {title: null};
     };
 
     render() {        
         return (
             <div className="container-fluid" style={{padding: 0}}>
                 <NavbarClass marca="TuTiendita" />
-                <h3 className="text-center">Proba como seria tu Tiendita Online</h3>
-                <div className="row producto">
-                    {renderProducts(this.onClickProduct.bind(this))}
+                <div className="row">
+                    <div className="col-md-3">
+                        <ItemCount />
+                    </div>
                 </div>
-                <div>{this.state.title}</div>
             </div>
         )
     }
