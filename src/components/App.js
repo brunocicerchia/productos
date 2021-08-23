@@ -1,9 +1,8 @@
 import React from "react";
 import NavbarClass from "./Navbar";
 import Producto from "./Producto";
-import ItemCount from "./itemCount";
 import '../App.css';
-import { useState, useEffect } from "react";
+import ItemCount from "./itemCount";
 
 const producto = [
     {
@@ -169,13 +168,15 @@ const producto = [
 ]
 
 const renderProducts = (onClickProduct) => {
-    return producto.map(producto => {
+    return producto.map((producto, key) => {
+        console.log(key);
         return (
             <Producto
              title={producto.title}
              price={producto.price}
              description={producto.description}
              image={producto.image}
+             key={Math.random()}
              onClick={() => onClickProduct(producto.title)}
             />
         )
@@ -184,24 +185,24 @@ const renderProducts = (onClickProduct) => {
 
 //Component Class
 class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {title: null};
+    }
 
     onClickProduct(title) {
         this.setState({title : title});
     }
 
-    constructor(props) {
-        super(props);
-    };
-
-    render() {        
+    render() {
         return (
-            <div className="container-fluid" style={{padding: 0}}>
+            <div className="container-fluid">
                 <NavbarClass marca="TuTiendita" />
-                <div className="row">
-                    <div className="col-md-3">
-                        <ItemCount />
-                    </div>
+                <h3 className="text-center">Proba como seria tu Tiendita Online</h3>
+                <div className="row producto">
+                    {renderProducts(this.onClickProduct.bind(this))}
                 </div>
+                <div>{this.state.title}</div>
             </div>
         )
     }

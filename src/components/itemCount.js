@@ -19,18 +19,7 @@ class ItemCount extends React.Component {
         } else {
             console.log("No hay mas stock para este producto")
         }       
-    }
-
-    onRemoveOne(e) {
-        e.preventDefault()
-        if(this.state.contador > 0) {
-            this.setState(prevState => ({
-                contador: prevState.contador - 1
-            }));
-        } else {
-            console.log("No podes pedir -1 Items!")
-        }   
-    }
+    }     
 
     render() {
         return <form>
