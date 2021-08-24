@@ -21,6 +21,26 @@ class ItemCount extends React.Component {
         }
     }
 
+    removeOne(e) {
+        e.preventDefault()
+        if(this.state.isStock === true) {
+            if(this.state.contador > 0) {
+                this.setState(prevState => ({
+                    contador: prevState.contador -1
+                }));
+            } else {
+                console.log("No podes pedir items negativos!!")
+            }
+        } else {
+            console.log("No hay mas stock para este producto")
+        }
+    }
+
+    onAdd(e) {
+        e.preventDefault()
+        console.log("Proximamente")
+    }
+
     render() {
         return <form>
             <div class="mb-3 text-center">
