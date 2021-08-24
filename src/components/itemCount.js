@@ -21,21 +21,6 @@ class ItemCount extends React.Component {
         }
     }
 
-    removeOne(e) {
-        e.preventDefault()
-        if(this.state.contador > 0) {
-            this.setState(prevState => ({
-                contador: prevState.contador - 1
-            }));
-        } else {
-            console.log("No podes pedir -1 Items!")
-        }
-    }
-
-    onAdd() {
-        console.log("proximamente")
-    }
-
     render() {
         return <form>
             <div class="mb-3 text-center">

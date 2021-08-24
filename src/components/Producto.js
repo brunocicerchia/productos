@@ -1,9 +1,9 @@
 import React from 'react';
 import ItemCount from './itemCount';
 
-const Producto = ({ title, price, description, image, onClick}) => {
+const Producto = ({ title, price, description, image, onClick, key}) => {
     return (
-        <div className="col-md-3 producto">
+        <div key={key} className="col-md-3 producto">
             <div className="card">
                 <img src={image} className="card-img-top producto-img mx-auto d-block" alt={title} />
                 <div className="card-body">
