@@ -6,22 +6,22 @@ class ItemCount extends React.Component {
         this.state = {contador : 1, stock: 10, isStock: true, warning: "block"}
     }
 
-    onAdd(e) {
+    addOne(e) {
         e.preventDefault()
-        if(this.state.isStock == true) {
+        if(this.state.isStock === true) {
             if(this.state.contador < this.state.stock) {
                 this.setState(prevState => ({
                     contador: prevState.contador +1
                 }));
             } else {
                 console.log("Solo hay 10 items restantes!")
-            }    
+            }
         } else {
             console.log("No hay mas stock para este producto")
-        }       
+        }
     }
 
-    onRemoveOne(e) {
+    removeOne(e) {
         e.preventDefault()
         if(this.state.contador > 0) {
             this.setState(prevState => ({
@@ -29,17 +29,21 @@ class ItemCount extends React.Component {
             }));
         } else {
             console.log("No podes pedir -1 Items!")
-        }   
+        }
+    }
+
+    onAdd() {
+        console.log("proximamente")
     }
 
     render() {
         return <form>
             <div class="mb-3 text-center">
-                <h3>Stock disponible: 10 unidades</h3>
                 <p>{this.state.contador}</p>
-                <button className="btn btn-success" onClick={this.onAdd.bind(this)} style={{margin: "5px"}}>+</button>
-                <button className="btn btn-warning" onClick={this.onRemoveOne.bind(this)} style={{margin: "5px"}}>-</button>
+                <button className="btn btn-success" onClick={this.addOne.bind(this)} style={{margin: "5px"}}>+</button>
+                <button className="btn btn-warning" onClick={this.removeOne.bind(this)} style={{margin: "5px"}}>-</button>
             </div>
+            <button className="btn btn-primary" onClick={this.onAdd.bind(this)} style={{margin: "5px"}}>Agregar al carrito</button>
         </form>
     }
 }
