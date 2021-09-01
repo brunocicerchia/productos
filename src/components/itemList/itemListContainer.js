@@ -1,6 +1,6 @@
 import React from "react";
 import ItemList from "./itemList";
-import '../App.css';
+import '../../App.css';
 
 //Component Class
 class ItemListContainer extends React.Component {

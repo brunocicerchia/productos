@@ -1,7 +1,15 @@
 .producto-img {
-  max-width: 200px;  
+  max-width: 200px;
 }
 
 .producto {
   margin: 0;
+}
+
+.route {
+  color: #9B9D9E;
+}
+
+.active-itemm {
+  color: #ffff;
 }
