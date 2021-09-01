@@ -19,7 +19,7 @@ class NavbarClass extends React.Component {
                                     <NavLink className="nav-link route" activeClassName="active-item" to="/productos">Productos</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link route" activeClassName="active-item" to="/itemDetal">itemDetalContainer</NavLink>
+                                    <NavLink className="nav-link route" activeClassName="active-item" to="/itemDetail">itemDetalContainer</NavLink>
                                 </li>
                             </ul>
                         </div>
