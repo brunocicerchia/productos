@@ -1,19 +1,15 @@
 import React from "react";
 import ItemList from "./itemList";
 import '../../App.css';
+import { useParams } from "react-router-dom";
 
 //Component Class
-class ItemListContainer extends React.Component {
+const ItemListContainer = () => {
+    const { categoryId } = useParams();
 
-    onClickProduct(title) {
-        this.setState({title : title});
-    }
-
-    render() {
-        return (
-            <ItemList />
-        )
-    }
+    return (
+        <ItemList category={categoryId} />
+    )
 }
 
 export default ItemListContainer;

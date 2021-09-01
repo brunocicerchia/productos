@@ -1,13 +1,14 @@
 import React from "react";
 import '../App.css';
+import ItemListContainer from "./itemList/itemListContainer";
 
 //Component Class
-class Home extends React.Component {
-    render() {
-        return (
-            <h3>Home</h3>
-        )
-    }
+const Home = () => {
+    return (
+        <div>
+            <ItemListContainer />
+        </div>
+    )
 }
 
 export default Home;

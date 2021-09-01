@@ -12,8 +12,8 @@ const Router = () => {
             <NavbarClass />
             <Switch>
                 <Route exact path="/" component={Home} />
-                <Route exact path="/productos" component={ItemListContainer} />
-                <Route exact path="/itemDetail" component={ItemDetailContainer} />
+                <Route path="/category/:categoryId" component={ItemListContainer} />
+                <Route exact path="/producto/:productId" component={ItemDetailContainer} />
                 <Route exact path="*" component={NotFound} />
             </Switch>
         </BrowserRouter>

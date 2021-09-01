@@ -43,7 +43,7 @@ class ItemCount extends React.Component {
 
     render() {
         return <form>
-            <div class="mb-3 text-center">
+            <div className="mb-3 text-center">
                 <p>{this.state.contador}</p>
                 <button className="btn btn-success" onClick={this.addOne.bind(this)} style={{margin: "5px"}}>+</button>
                 <button className="btn btn-warning" onClick={this.removeOne.bind(this)} style={{margin: "5px"}}>-</button>
